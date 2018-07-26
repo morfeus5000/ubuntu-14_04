@@ -4,6 +4,7 @@ FROM ubuntu:14.04
 # and then heavily modified and hacked like crazy
 
 # we're going to want this bad boy installed so we can connect :)
+
 VOLUME /opt
 
 RUN apt-get update && apt-get install -y ssh
