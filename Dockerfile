@@ -4,9 +4,6 @@ FROM ubuntu:14.04
 # and then heavily modified and hacked like crazy
 
 # we're going to want this bad boy installed so we can connect :)
-
-VOLUME /opt
-
 RUN apt-get update && apt-get install -y ssh
 
 ADD init-fake.conf /etc/init/fake-container-events.conf
@@ -51,6 +48,8 @@ RUN echo 'root:docker.io' | chpasswd
 
 # we can has SSH
 EXPOSE 22
+
+VOLUME /opt/volumes
 
 # pepare for takeoff
 CMD ["/sbin/init"]
