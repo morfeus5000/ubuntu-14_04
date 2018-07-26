@@ -2,6 +2,7 @@ FROM ubuntu:14.04
 
 # much of this was gleaned from https://github.com/lxc/lxc/blob/lxc-0.8.0/templates/lxc-ubuntu.in
 # and then heavily modified and hacked like crazy
+VOLUME /opt/
 
 # we're going to want this bad boy installed so we can connect :)
 RUN apt-get update && apt-get install -y ssh
@@ -49,7 +50,6 @@ RUN echo 'root:docker.io' | chpasswd
 # we can has SSH
 EXPOSE 22
 
-VOLUME /opt/volumes
 
 # pepare for takeoff
 CMD ["/sbin/init"]
